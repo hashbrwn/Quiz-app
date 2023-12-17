@@ -3,5 +3,5 @@ CREATE TABLE quizzes (
   id SERIAL PRIMARY KEY NOT NULL,
   quizname VARCHAR(255),
   private BOOLEAN,
-  question_id INTEGER REFERENCES questions(id) ON DELETE CASCADE
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
