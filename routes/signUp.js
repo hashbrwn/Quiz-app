@@ -92,7 +92,7 @@ router.post('/sign-up', (req, res) => {
 
   // TODO: switch urls to different redirect
   //redirect to the /urls page
-  res.redirect('/urls');
+  res.redirect('/userPage');
 
   // log it
   console.log(' New user registered:', newUser);
