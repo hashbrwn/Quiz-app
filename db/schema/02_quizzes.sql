@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS quizzes CASCADE;
+CREATE TABLE quizzes (
+  id SERIAL PRIMARY KEY NOT NULL,
+  quizname VARCHAR(255),
+  private BOOLEAN,
+  question_id INTEGER REFERENCES questions(id) ON DELETE CASCADE
+);
