@@ -1,7 +1,6 @@
 const express = require('express');
 const router  = express.Router();
 const bcrypt = require("bcryptjs");
-const { route } = require('./users-api');
 
 // TODO: replace with users database
 const users = {};
@@ -63,3 +62,5 @@ router.get("/login", (req, res) => {
   }
   res.render('login', localsVars)
 });
+
+module.exports = router;
