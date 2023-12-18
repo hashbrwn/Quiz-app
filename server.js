@@ -6,6 +6,7 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session')
+const bodyParser    = require("body-parser");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -17,6 +18,10 @@ app.set('view engine', 'ejs');
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+ // Added body parser for json
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 //use cookie sessions
 app.use(cookieSession({
   name: 'session',

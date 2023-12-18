@@ -1,45 +1,10 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const bcrypt = require("bcryptjs");
+const userQueries = require('../db/queries/users');
 
 // TODO: replace with users database
 const users = {};
-
-// TODO: replace with user database helper function
-
-// Helper function
-function getUserByEmail(email, database) {
-  //looping over users using for in loop
-  for (let userId in database) {
-    //getting user by ID
-    const user = database[userId]
-    //checking if users email matches
-    if (user.email === email) {
-      //returning users if matching
-      return user
-    }
-  }
-  // return null if no matching users
-  return null
-};
-
-
-// TODO: replace with user database helper function
-
-// Helper function
-function generateRandomString(length) {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let randomString = '';
-
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    randomString += characters.charAt(randomIndex);
-  }
-
-  return randomString;
-}
-
-
 
 router.get("/sign-up", (req, res) => {
   // getting userId from the cookie
@@ -60,42 +25,38 @@ router.get("/sign-up", (req, res) => {
 });
 
 router.post('/sign-up', (req, res) => {
-  const { email, password } = req.body;
+  const { username, email, password } = req.body;
   const hashedPassword = bcrypt.hashSync(password, 10);
-  console.log(users)
 
   // return 400 if email or password are empty
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email or Password cannot be empty' });
+  if (!username || !email || !password) {
+    return res.status(400).json({ error: 'Username, Email or Password cannot be empty' });
   }
-  const user = getUserByEmail(email, users)
-  // check if the email is already in use
-  if (user) {
-    //send back a response with 400 code for same email
-    return res.status(400).json({ error: 'Email is already in use' });
-  }
-  // generate a random user ID
-  const userId = generateRandomString(10);
 
-  //create a new user object
-  const newUser = {
-    id: userId,
-    email: email,
-    password: hashedPassword
-  };
+  userQueries.getUserByEmail(email).then(userWithEmail => {
+    // check if the email is already in use
+    if (userWithEmail.length) {
+      //send back a response with 400 code for same email
+      return res.status(400).json({ error: 'Email is already in use' });
+    }
 
-  // add the new user to the global users object
-  users[userId] = newUser;
+    // create user
+    userQueries.createUser(username, email, hashedPassword).then(user => {
+      // set the user_id cookie
+      req.session.user_id = user.id;
 
-  // set the user_id cookie
-  req.session.user_id = userId;
+      // TODO: switch urls to different redirect
+      //redirect to the /urls page
+      res.redirect('/userPage');
 
-  // TODO: switch urls to different redirect
-  //redirect to the /urls page
-  res.redirect('/userPage');
-
-  // log it
-  console.log(' New user registered:', newUser);
+      // log it
+      console.log('New user registered:', user);
+    }).catch(error => {
+      return res.status(400).json({error: 'error invalid data'});
+    })
+  }).catch(error => {
+    return res.status(500).json({error: 'error sign up failed'});
+  })
 })
 
 module.exports = router;
