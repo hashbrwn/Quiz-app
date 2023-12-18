@@ -9,19 +9,21 @@ const users = {};
 router.get("/sign-up", (req, res) => {
   // getting userId from the cookie
   const userId = req.session.user_id;
-  //getting user object
-  const user = users[userId];
+  //  getting id object
+  userQueries.getUserById(userId).then(user => {
+    if (user) {
+      // TODO: switch urls to different redirect
+      res.redirect('/urls');
+    }
+    const localsVars = {
+      user,
+    };
 
-  const localsVars = {
-    user,
-  };
-
-  if (user) {
-    //TODO: switch urls to different redirect
-    res.redirect('/urls');
-  }
-  //TODO: make sure signUp matches correct page name
-  res.render("signUp", localsVars);
+    //TODO: make sure signUp matches correct page name
+    res.render("signUp", localsVars);
+  }).catch(error => {
+    return res.status(500).json({ error: 'error invalid data' });
+  })
 });
 
 router.post('/sign-up', (req, res) => {
@@ -52,10 +54,10 @@ router.post('/sign-up', (req, res) => {
       // log it
       console.log('New user registered:', user);
     }).catch(error => {
-      return res.status(400).json({error: 'error invalid data'});
+      return res.status(400).json({ error: 'error invalid data' });
     })
   }).catch(error => {
-    return res.status(500).json({error: 'error sign up failed'});
+    return res.status(500).json({ error: 'error sign up failed' });
   })
 })
 

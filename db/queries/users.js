@@ -14,6 +14,13 @@ const getUserByEmail = (email) => {
     });
 }
 
+const getUserById = (id) => {
+  return db.query(`SELECT * FROM users WHERE users.id='${id}';`)
+    .then(data => {
+      return data.rows;
+    });
+}
+
 
 const createUser = (username, email, password) => {
   const query = {
@@ -25,4 +32,4 @@ const createUser = (username, email, password) => {
   });
 }
 
-module.exports = { getUsers, getUserByEmail, createUser };
+module.exports = { getUsers, getUserByEmail, createUser, getUserById };
