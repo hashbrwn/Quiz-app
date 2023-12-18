@@ -5,6 +5,8 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session')
+const bodyParser    = require("body-parser");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -16,6 +18,16 @@ app.set('view engine', 'ejs');
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+ // Added body parser for json
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//use cookie sessions
+app.use(cookieSession({
+  name: 'session',
+  keys: ['MySecret']
+}));
+
 app.use(
   '/styles',
   sassMiddleware({
@@ -31,13 +43,14 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-
+const signUpRoutes = require('./routes/signUp');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/signUp', signUpRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
