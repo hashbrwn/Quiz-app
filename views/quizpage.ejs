@@ -12,14 +12,86 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+  crossorigin="anonymous"/>
+  
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 </head>
 
 <body>
-  <h1>Quiz page!</h1>
+  <h1>Quiz name: The Lion King</h1>
+
+  <div class="container mt-sm-5 my-1">
+    <div class="question ml-sm-5 pl-sm-5 pt-2">
+        <div class="py-2 h5"><b>In what language is the phrase ‘Hakuna Matata’??</b></div>
+        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+            <label class="options">Dutch
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="options">Swahili
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="options">Yoruba
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+ </div>
+
+ <div class="container mt-sm-5 my-1">
+  <div class="question ml-sm-5 pl-sm-5 pt-2">
+      <div class="py-2 h5"><b>And what is the meaning of ‘Hakuna Matata’?</b></div>
+      <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+          <label class="options">No worries
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+          </label>
+          <label class="options">Goodnight
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+          </label>
+          <label class="options">Thank you 
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+  </div>
+</div>
+
+<div class="container mt-sm-5 my-1">
+  <div class="question ml-sm-5 pl-sm-5 pt-2">
+      <div class="py-2 h5"><b>Which character tries to kill young Simba?</b></div>
+      <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+          <label class="options">Scar
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+          </label>
+          <label class="options">Nala
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+          </label>
+          <label class="options">Musafa
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+  </div>
+  <div class="d-flex align-items-center pt-3">
+      <div class="ml-auto mr-sm-5">
+          <button class="btn btn-warning"> Submit </button>
+      </div>
+  </div>
+
   
+</div>
+
 </body>
 
 </html>
