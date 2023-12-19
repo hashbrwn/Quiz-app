@@ -7,9 +7,13 @@
 
 const express = require('express');
 const router  = express.Router();
+const quizzesQueries = require('../db/queries/quiz');
 
-router.get('/quizpage', (req, res) => {
-  res.render('quizpage');
+
+router.get("/", (req, res) => {
+  quizzesQueries.getRandomQuiz().then(quizzes => {
+    res.render("quizpage", {quizzes})
+  })  
 }); 
 
 module.exports = router;
