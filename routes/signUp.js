@@ -3,9 +3,6 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const userQueries = require('../db/queries/users');
 
-// TODO: replace with users database
-const users = {};
-
 router.get("/sign-up", (req, res) => {
   // getting userId from the cookie
   const userId = req.session.user_id;
