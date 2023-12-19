@@ -46,6 +46,7 @@ const usersRoutes = require('./routes/users');
 const signUpRoutes = require('./routes/signUp');
 const quizpageRoutes = require('./routes/quizpage');
 const loginRoutes = require('./routes/login');
+const userQuizRoutes = require('./routes/userQuiz')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -56,6 +57,7 @@ app.use('/users', usersRoutes);
 app.use('/signUp', signUpRoutes);
 app.use('/quizpage', quizpageRoutes);
 app.use('/login', loginRoutes);
+app.use('/userQuiz', userQuizRoutes);
 
 // Note: mount other resources here, using the same pattern above
 
