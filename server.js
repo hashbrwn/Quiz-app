@@ -75,12 +75,8 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
-// Quiz page
-app.get('/quizpage', (req, res) => {
-  res.render('quizpage');
-});
 
 //SignUp page
-app.get('/signUp', (req, res) => {
-  res.render('signUp');
-});
+// app.get('/signUp', (req, res) => {
+//   res.render('signUp');
+// });
