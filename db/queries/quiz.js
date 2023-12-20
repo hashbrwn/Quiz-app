@@ -13,15 +13,14 @@ const getQuizzesByUser = (id) => {
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max)+1;
-}
+};
 
-const getRandomQuiz = () => {
-  let random = getRandomInt(9);
-  console.log(random)
+const getRandomQuiz = (number) => {
+  if (!number) {number = getRandomInt(9)}
   return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer 
   FROM questions
   JOIN quizzes ON questions.quiz_id = quizzes.id
-  WHERE questions.quiz_id = ${random};`)
+  WHERE questions.quiz_id = ${number};`)
   .then (data => {
     console.log(data.rows)
     return data.rows;

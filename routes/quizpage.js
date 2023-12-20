@@ -10,10 +10,20 @@ const router  = express.Router();
 const quizzesQueries = require('../db/queries/quiz');
 
 
-router.get("/", (req, res) => {
-  quizzesQueries.getRandomQuiz().then(quizzes => {
+router.get(["/:id","/"], (req, res) => {
+  const quizId = req.params.id
+  quizzesQueries.getRandomQuiz(quizId).then(quizzes => {
     res.render("quizpage", {quizzes})
   })  
 }); 
+
+
+router.post("/", (req, res) => {
+  const selectedRadioOption = req.body.radioOption;
+  if (!selectedRadioOption) {
+    return res.status(400).json({ error: "Please select a radio option" });
+  }
+})
+
 
 module.exports = router;
