@@ -19,10 +19,12 @@
     <div class="quiz-container">
         <h2>My Quizes</h2>
         <div class="quiz-buttons">
-            <button>Quiz 1</button>
-            <button>Quiz 2</button>
-            <button>Quiz 3</button>
-            <button>Quiz 4</button>
+          <% for(let i = 0; i < quizzes.length; i++ ) { %>
+          <a href=" "  >   <%= quizzes[i].quizname;   %>  </a>
+        <%  } %>
+
+
+
         </div>
     </div>
 </body>

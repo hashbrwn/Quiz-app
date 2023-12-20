@@ -7,7 +7,8 @@ router.get("/", (req, res) => {
   const userId = req.session.user_id;
   // getting user quizzes
   quizzesQueries.getQuizzesByUser(userId).then(quizzes => {
-    res.render("userpage", {quizzes})
+   const templatevars = {quizzes: quizzes}
+    res.render("userpage", templatevars)
   }).catch(error => {
     return res.status(400).json({ error: 'error invalid request' })
   })
