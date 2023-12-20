@@ -20,7 +20,7 @@
         <h2>My Quizes</h2>
         <div class="quiz-buttons">
           <% for(let i = 0; i < quizzes.length; i++ ) { %>
-          <a href=" "  >   <%= quizzes[i].quizname;   %>  </a>
+          <a href="/userquiz/edit/<%= quizzes[i].id;   %>"  >   <%= quizzes[i].quizname;   %>  </a>
         <%  } %>
 
 

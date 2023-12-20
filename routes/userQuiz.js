@@ -13,5 +13,11 @@ router.get("/", (req, res) => {
     return res.status(400).json({ error: 'error invalid request' })
   })
 });
+router.get("/edit/:id", (req, res) =>  {
+  const quizid= req.params.id
+const templatevars = {}
+res.render("editquiz", templatevars)
+
+})
 
 module.exports = router;
