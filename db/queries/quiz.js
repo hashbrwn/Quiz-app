@@ -22,9 +22,9 @@ const getRandomQuiz = (number) => {
   JOIN quizzes ON questions.quiz_id = quizzes.id
   WHERE questions.quiz_id = ${number};`)
   .then (data => {
-    console.log(data.rows)
     return data.rows;
   })
 };
+
 
 module.exports = { getQuizzesByUser, getRandomQuiz };
