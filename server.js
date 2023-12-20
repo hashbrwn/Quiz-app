@@ -45,6 +45,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const signUpRoutes = require('./routes/signUp');
 const quizpageRoutes = require('./routes/quizpage');
+const resultspageRoutes = require('./routes/results');
 const loginRoutes = require('./routes/login');
 const userQuizRoutes = require('./routes/userQuiz')
 
@@ -56,6 +57,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/signUp', signUpRoutes);
 app.use('/quizpage', quizpageRoutes);
+app.use('/results', resultspageRoutes);
 app.use('/login', loginRoutes);
 app.use('/userQuiz', userQuizRoutes);
 
