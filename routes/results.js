@@ -7,16 +7,25 @@
 
 const express = require('express');
 const router  = express.Router();
+const quizzesQueries = require('../db/queries/quiz');
 
 
 
 
-router.get(["/"], (req, res) => {
-
-
-
-  res.render("results")
+router.get(["/:id","/"], (req, res) => {
   
+  quizzesQueries.getQuiz()
+  .then(quizzes => { 
+    
+    const templateVars = { 
+      answer1: req.query.answer1,
+      answer2: req.query.answer2,
+      answer3: req.query.answer3
+    }
+
+  res.render("results", {templateVars, quizzes})
+
+  })
 }); 
 
 
