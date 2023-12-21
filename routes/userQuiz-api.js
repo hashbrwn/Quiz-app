@@ -39,5 +39,9 @@ router.post('/', (req, res) => {
 
 })
 
+// router.get('/', (req, res) => {
+//   res.render('userQuiz-api');
+// }); 
+
 module.exports = router;
 
