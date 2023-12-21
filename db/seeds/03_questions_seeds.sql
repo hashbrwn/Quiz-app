@@ -1,6 +1,7 @@
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'What is the longest word in the English language?',
   'Antidisestablishmentarianism',
   'Hippopotomonstrosesquippedaliophobia',
@@ -8,9 +9,10 @@ VALUES (
   'answer1', 1
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id)  
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'What is the name of the world’s smallest horse?',
   'Falabella',
   'Shetland pony',
@@ -18,9 +20,10 @@ VALUES (
   'answer3', 1
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'What is Benedictine monk Dom Pierre Pérignon rumored to have created?',
   'Tomato ketchup',
   'Champagne',
@@ -28,9 +31,10 @@ VALUES (
   'answer2', 1
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'Which country drinks the most amount of coffee per person?',
   'Finland',
   'Italy',
@@ -38,9 +42,10 @@ VALUES (
   'answer1', 2
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'What is the collective name for a group of unicorns?',
   'A sparkle',
   'A spell',
@@ -48,9 +53,10 @@ VALUES (
   'answer3', 2
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'What is the most common color of toilet paper in France?',
   'Pink',
   'White',
@@ -58,9 +64,10 @@ VALUES (
   'answer1', 2
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'How many years old is the world’s oldest piece of chewing gum?',
   '100',
   '2500',
@@ -68,9 +75,10 @@ VALUES (
   'answer3', 3
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'How many times per day does the average American open their fridge?',
   '5',
   '22',
@@ -78,9 +86,10 @@ VALUES (
   'answer3', 3
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'What color is an airplane’s famous black box?',
   'Red',
   'Orange',
@@ -88,9 +97,10 @@ VALUES (
   'answer2', 3
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'How many tails does a Manx cat have?',
   'None',
   'One',
@@ -98,9 +108,10 @@ VALUES (
   'answer1', 4
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'On a boat, what is the opposite of port?',
   'Bow',
   'Starboard',
@@ -108,9 +119,10 @@ VALUES (
   'answer2', 4
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'Who is credited with inventing the World Wide Web?',
   'Steve Jobs',
   'Bill Gates',
@@ -118,9 +130,10 @@ VALUES (
   'answer3', 4
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'Who invented the bikini?',
   'Louis Vuitton',
   'Coco Chanel',
@@ -128,9 +141,10 @@ VALUES (
   'answer3', 5
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'As of July 2023, how many episodes of South Park are there?',
   '250',
   '300',
@@ -138,9 +152,10 @@ VALUES (
   'answer3', 5
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'In what decade was Madonna born?',
   '1950s',
   '1960s',
@@ -148,9 +163,10 @@ VALUES (
   'answer1', 5
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'In what language is the phrase Hakuna Matata?',
   'Dutch',
   'Swahili',
@@ -158,9 +174,10 @@ VALUES (
   'answer2', 6
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'And what is the meaning of Hakuna Matata?',
   'No worries',
   'Goodnight',
@@ -168,9 +185,10 @@ VALUES (
   'answer1', 6
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'Which character tries to kill young Simba?',
   'Scar',
   'Nala',
@@ -178,9 +196,10 @@ VALUES (
   'answer1', 6
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'What is King Charles III surname?',
   'Arthur',
   'Wales',
@@ -188,9 +207,10 @@ VALUES (
   'answer3', 7
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'What is the name of a duel with three people involved?',
   'A triage',
   'A truel',
@@ -198,9 +218,10 @@ VALUES (
   'answer2', 7
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'How many stars are on the United States flag?',
   '50',
   '51',
@@ -208,9 +229,10 @@ VALUES (
   'answer1', 7
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'In which year JavaScript first appeared?',
   '2012',
   '1995',
@@ -218,9 +240,10 @@ VALUES (
   'answer2', 8
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'What type of computer was the first laptop computer?',
   'Apple Macintosh',
   'IBM PC',
@@ -228,9 +251,10 @@ VALUES (
   'answer3', 8
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'What is the largest social media network in the world?',
   'Twitter',
   'Facebook',
@@ -238,9 +262,10 @@ VALUES (
   'answer2', 8
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'Who is considered the founder of modern computer science?',
   'Alan Turing',
   'Albert Einstein',
@@ -248,9 +273,10 @@ VALUES (
   'answer1', 9
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'The website Info.cern.ch is famous for what function?',
   'Being the predecessor for Wikipedia',
   'Being the world’s very first website',
@@ -258,9 +284,10 @@ VALUES (
   'answer2', 9
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'What year was the iPhone first released in?',
   '2007',
   '2009',
@@ -268,9 +295,10 @@ VALUES (
   'answer1', 9
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  1,
   'In which year did the Berlin Wall fall?',
   '1987',
   '1989',
@@ -278,9 +306,10 @@ VALUES (
   'answer2', 10
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  2,
   'In Ancient Rome, how many days of the week were there?',
   'Five',
   'Six',
@@ -288,9 +317,10 @@ VALUES (
   'answer3', 10
 );
 
-INSERT INTO questions 
-(question, answer1, answer2, answer3, correct_answer, quiz_id) 
+INSERT INTO questions
+(question_number, question, answer1, answer2, answer3, correct_answer, quiz_id)
 VALUES (
+  3,
   'What was New York’s original name?',
   'New Liverpool',
   'New Amsterdam',

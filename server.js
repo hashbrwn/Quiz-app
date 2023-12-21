@@ -47,7 +47,7 @@ const signUpRoutes = require('./routes/signUp');
 const quizpageRoutes = require('./routes/quizpage');
 const loginRoutes = require('./routes/login');
 const userQuizRoutes = require('./routes/userQuiz')
-
+const userQuizApiRoutes = require('./routes/userQuiz-api')
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -58,6 +58,8 @@ app.use('/signUp', signUpRoutes);
 app.use('/quizpage', quizpageRoutes);
 app.use('/login', loginRoutes);
 app.use('/userQuiz', userQuizRoutes);
+app.use('/api/userQuiz', userQuizApiRoutes);
+
 
 // Note: mount other resources here, using the same pattern above
 
@@ -73,12 +75,8 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
-// Quiz page
-app.get('/quizpage', (req, res) => {
-  res.render('quizpage');
-});
 
 //SignUp page
-app.get('/signUp', (req, res) => {
-  res.render('signUp');
-});
+// app.get('/signUp', (req, res) => {
+//   res.render('signUp');
+// });
