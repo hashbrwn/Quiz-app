@@ -12,4 +12,11 @@ const addQuizQuestion = (question_number, question, answer1, answer2, answer3, c
     });
 }
 
-module.exports = { addQuizQuestion };
+const getQuestionsByQuizId = (quiz_id) => {
+  return db.query(`SELECT * FROM questions WHERE questions.quiz_id='${quiz_id}';`)
+    .then(data => {
+      return data.rows;
+    });
+}
+
+module.exports = { addQuizQuestion, getQuestionsByQuizId };
