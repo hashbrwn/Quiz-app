@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
   console.log(req)
   // getting userId from the cookie
  // const userId = req.session.user_id;
- const userId= 2
+ const userId= 3
   // getting user quizzes
   quizzesQueries.getQuizzesByUser(userId).then(quizzes => {
     console.log(quizzes);
@@ -16,12 +16,23 @@ router.get("/", (req, res) => {
     return res.status(400).json({ error: 'error invalid request' })
   })
 });
-router.get("/edit/:id", (req, res) =>  {
+
+router.get("/new",(req, res) => {
+res.render
+})
+
+
+router.get("/:id", (req, res) =>  {
   const quizid= req.params.id
-const templatevars = {}
-res.render("editquiz", templatevars)
+  quizzesQueries.getQuizById(quizid)
+  .then(quiz => {
+    const templatevars = {quiz}
+res.render("quizpage", templatevars)
+
+  })
 
 })
+
 
 
 module.exports = router;
