@@ -48,7 +48,7 @@ const quizpageRoutes = require('./routes/quizpage');
 const resultspageRoutes = require('./routes/results');
 const loginRoutes = require('./routes/login');
 const userQuizRoutes = require('./routes/userQuiz')
-
+const userQuizApiRoutes = require('./routes/userQuiz-api')
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -60,6 +60,8 @@ app.use('/quizpage', quizpageRoutes);
 app.use('/results', resultspageRoutes);
 app.use('/login', loginRoutes);
 app.use('/userQuiz', userQuizRoutes);
+app.use('/api/userQuiz', userQuizApiRoutes);
+
 
 // Note: mount other resources here, using the same pattern above
 

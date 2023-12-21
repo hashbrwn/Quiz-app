@@ -9,6 +9,18 @@ const getQuizzesByUser = (id) => {
     });
 }
 
+//Helper function
+const createQuiz = (quizname, private, user_id) => {
+  const query = {
+    text: 'INSERT INTO quizzes (quizname, private, user_id) VALUES ($1, $2, $3) RETURNING *',
+    values: [quizname, private, user_id],
+  }
+  return db.query(query)
+    .then(data => {
+      return data.rows;
+    });
+}
+
 // helper function for quizpage
 
 function getRandomInt(max) {
@@ -36,4 +48,5 @@ const getQuiz = (number) => {
   })
 };
 
-module.exports = { getQuizzesByUser, getRandomQuiz, getQuiz };
+
+module.exports = { getQuizzesByUser, getRandomQuiz, createQuiz, getQuiz };
