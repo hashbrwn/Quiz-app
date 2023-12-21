@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Results Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+  crossorigin="anonymous"/>
+  
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+ 
+    <h1>Quiz results</h1>
+    <h1><%= quizzes[0].quizname %></h1>
+<form action = "/quizpage" method = "post">
+  <div class="container mt-sm-5 my-1">
+
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+            <div class="py-2 h4"><b><%= quizzes[0].question %> </b></div>
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                <laber class="py-2 h5"> Your answer: </laber> 
+                    <label class="options">
+                        <%=templateVars.answer1 %>
+                    </label>
+
+                <% if (templateVars.answer1 === quizzes[0].text_answer) { %>
+                <div class="message correct"> 
+                    CORRECT!
+                </div>
+                <% } else { %>
+                    <div class="message wrong"> 
+                        WRONG!
+                    </div>
+                <% } %>    
+
+                <laber class="py-2 h5"> Correct answer: </laber>
+                    <label class="options">
+                        <%= quizzes[0].text_answer %>
+                    </label>
+            </div>
+        </div>
+
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+            <div class="py-2 h4"><b><%= quizzes[1].question %> </b></div>
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                <laber class="py-2 h5"> Your answer: </laber> 
+                  <label class="options">
+                        <%=templateVars.answer2 %>
+                    </label>
+                <% if (templateVars.answer2 === quizzes[1].text_answer) { %>
+                <div class="message correct"> 
+                    CORRECT!
+                </div>
+                <% } else { %>
+                    <div class="message wrong"> 
+                        WRONG!
+                    </div>
+                <% } %>    
+  
+                <laber class="py-2 h5"> Correct answer: </laber>
+                    <label class="options">
+                        <%= quizzes[1].text_answer %>
+                    </label>
+            </div>
+        </div>
+
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+            <div class="py-2 h4"><b><%= quizzes[2].question %> </b></div>
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                <laber class="py-2 h5"> Your answer: </laber> 
+                  <label class="options">
+                        <%=templateVars.answer3 %>
+                    </label>
+                <% if (templateVars.answer3 === quizzes[2].text_answer) { %>
+                <div class="message correct"> 
+                    CORRECT!
+                </div>
+                <% } else { %>
+                    <div class="message wrong"> 
+                        WRONG!
+                    </div>
+                <% } %>    
+  
+                <laber class="py-2 h5"> Correct answer: </laber>
+                    <label class="options">
+                        <%= quizzes[2].text_answer %>
+                    </label>
+            </div>
+        </div>
+ </div>
+ <div class="d-flex align-items-center pt-3">
+    <div class="ml-auto mr-sm-5">
+        <button class="btn btn-warning">
+            <a href="/">Go to Homepage</a>
+          </button>
+    </div>
+</div>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

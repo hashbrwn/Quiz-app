@@ -26,10 +26,20 @@ const createQuiz = (quizname, private, user_id) => {
 function getRandomInt(max) {
   return Math.floor(Math.random() * max)+1;
 };
-
 const getRandomQuiz = (number) => {
   if (!number) {number = getRandomInt(9)}
-  return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer 
+  return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer, text_answer
+  FROM questions
+  JOIN quizzes ON questions.quiz_id = quizzes.id
+  WHERE questions.quiz_id = ${number};`)
+  .then (data => {
+    return data.rows;
+  })
+};
+
+const getQuiz = (number) => {
+  if (!number) {number = 7}
+  return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer, text_answer 
   FROM questions
   JOIN quizzes ON questions.quiz_id = quizzes.id
   WHERE questions.quiz_id = ${number};`)
@@ -39,5 +49,4 @@ const getRandomQuiz = (number) => {
 };
 
 
-module.exports = { getQuizzesByUser, getRandomQuiz, createQuiz };
-
+module.exports = { getQuizzesByUser, getRandomQuiz, createQuiz, getQuiz };

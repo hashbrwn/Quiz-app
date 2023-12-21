@@ -107,3 +107,25 @@ body{
         word-spacing: 2px;
     } 
 }
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.message {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.correct {
+    background-color: #7FFF7F; /* Light green background for correct messages */
+    color: #006400; /* Dark green text color for correct messages */
+}
+
+.wrong {
+    background-color: #FF6F6F; /* Light red background for wrong messages */
+    color: #8B0000; /* Dark red text color for wrong messages */
+}

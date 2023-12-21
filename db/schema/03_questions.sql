@@ -7,5 +7,6 @@ CREATE TABLE questions (
   answer2 VARCHAR(255) NOT NULL,
   answer3 VARCHAR(255) NOT NULL,
   correct_answer VARCHAR(255) NOT NULL,
+  text_answer VARCHAR(255) NOT NULL,
   quiz_id INTEGER REFERENCES quizzes(id) ON DELETE CASCADE
 );
