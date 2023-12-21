@@ -3,10 +3,13 @@ const router  = express.Router();
 const quizzesQueries = require('../db/queries/quiz');
 
 router.get("/", (req, res) => {
+  console.log(req)
   // getting userId from the cookie
-  const userId = req.session.user_id;
+ // const userId = req.session.user_id;
+ const userId= 2
   // getting user quizzes
   quizzesQueries.getQuizzesByUser(userId).then(quizzes => {
+    console.log(quizzes);
    const templatevars = {quizzes: quizzes}
     res.render("userpage", templatevars)
   }).catch(error => {
@@ -19,5 +22,6 @@ const templatevars = {}
 res.render("editquiz", templatevars)
 
 })
+
 
 module.exports = router;

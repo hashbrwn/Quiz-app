@@ -8,3 +8,4 @@ CREATE TABLE questions (
   correct_answer VARCHAR(255) NOT NULL,
   quiz_id INTEGER REFERENCES quizzes(id) ON DELETE CASCADE
 );
+
