@@ -21,7 +21,7 @@ const createQuiz = (quizname, private, user_id) => {
     });
 }
 //helper function to get quiz
-const getQuizById = (id) => {
+const getQuizById= (id) => {
   return db.query(`SELECT * FROM quizzes WHERE quizzes.id='${id}';`)
     .then(data => {
       return data.rows;
@@ -35,7 +35,7 @@ function getRandomInt(max) {
 };
 const getRandomQuiz = (number) => {
   if (!number) {number = getRandomInt(9)}
-  return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer, text_answer
+  return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer
   FROM questions
   JOIN quizzes ON questions.quiz_id = quizzes.id
   WHERE questions.quiz_id = ${number};`)
@@ -44,16 +44,17 @@ const getRandomQuiz = (number) => {
   })
 };
 
-const getQuiz = (number) => {
-  if (!number) {number = 7}
-  return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer, text_answer
-  FROM questions
-  JOIN quizzes ON questions.quiz_id = quizzes.id
-  WHERE questions.quiz_id = ${number};`)
-  .then (data => {
-    return data.rows;
-  })
-};
+// const getQuestionsByQuizId = (quizid) => {
+//   console.log(quizid)
+//   return db.query(`SELECT quizzes.quizname, question, answer1, answer2, answer3, correct_answer
+//   FROM questions
+//   JOIN quizzes ON questions.quiz_id = quizzes.id
+//   WHERE questions.quiz_id = $1;`, [quizid])
+//   .then (data => {
+//     console.log(data.rows)
+//     return data.rows
+//   })
+// };
 
+module.exports = { getQuizzesByUser, getRandomQuiz, createQuiz, getQuizById };
 
-module.exports = { getQuizzesByUser, getRandomQuiz, createQuiz, getQuiz, getQuizById };

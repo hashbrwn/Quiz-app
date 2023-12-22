@@ -4,98 +4,69 @@
 <head>
   <title>Quiz Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-  crossorigin="anonymous"/>
-  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 </head>
 
 <body>
- 
-    <h1><%= quizzes[0].quizname %></h1>
-<form action = "/quizpage" method = "post">
+  <h1>Quiz page!</h1>
 
-  <div class="container mt-sm-5 my-1">
+  <h1>
+    <%= quiz.quizname %>
+
+
+  </h1>
+  <form action="/quizpage" method="post">
+
+
+<% for (var i=0; i < questions.length; i++ ) { %>
+      <div class="container mt-sm-5 my-1">
         <div class="question ml-sm-5 pl-sm-5 pt-2">
-            <div class="py-2 h5"><b><%= quizzes[0].question %></b></div>
-            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-                <label class="options"><%= quizzes[0].answer1 %>
-                    <input type="radio" name="radio1" value="<%= quizzes[0].answer1 %>">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="options"><%= quizzes[0].answer2 %>
-                    <input type="radio" name="radio1" value="<%= quizzes[0].answer2 %>">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="options"><%= quizzes[0].answer3 %>
-                    <input type="radio" name="radio1" value="<%= quizzes[0].answer3 %>">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-        </div>
- </div>
-
-  <div class="container mt-sm-5 my-1">
-        <div class="question ml-sm-5 pl-sm-5 pt-2">
-            <div class="py-2 h5"><b><%= quizzes[1].question %></b></div>
-            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-                <label class="options"><%= quizzes[1].answer1 %>
-                    <input type="radio" name="radio2" value="<%= quizzes[1].answer1 %>">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="options"><%= quizzes[1].answer2 %>
-                    <input type="radio" name="radio2" value="<%= quizzes[1].answer2 %>">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="options"><%= quizzes[1].answer3 %>
-                    <input type="radio" name="radio2" value="<%= quizzes[1].answer3 %>">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-        </div>
- </div>
-
- <div class="container mt-sm-5 my-1">
-    <div class="question ml-sm-5 pl-sm-5 pt-2">
-        <div class="py-2 h5"><b><%= quizzes[2].question %></b></div>
-        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-            <label class="options"><%= quizzes[2].answer1 %>
-                <input type="radio" name="radio3" value="<%= quizzes[2].answer1 %>">
+          <div class="py-2 h5"><b>
+              <%= questions[i].question %>
+            </b></div>
+          <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+            <label class="options">
+              <%= questions[i].answer1 %>
+                <input type="radio" name="radio1" value="answer1">
                 <span class="checkmark"></span>
             </label>
-            <label class="options"><%= quizzes[2].answer2 %>
-                <input type="radio" name="radio3" value="<%= quizzes[2].answer2 %>">
+            <label class="options">
+              <%= questions[i].answer2 %>
+                <input type="radio" name="radio1" value="answer2">
                 <span class="checkmark"></span>
             </label>
-            <label class="options"><%= quizzes[2].answer3 %>
-                <input type="radio" name="radio3" value="<%= quizzes[2].answer3 %>">
+            <label class="options">
+              <%= questions[i].answer3 %>
+                <input type="radio" name="radio1" value="answer3">
                 <span class="checkmark"></span>
             </label>
+          </div>
         </div>
-    </div>
- </div>
+      </div>
+      <% } %>
 
-    <div class="d-flex align-items-center pt-3">
-        <div class="ml-auto mr-sm-5">
+
+        <div class="d-flex align-items-center pt-3">
+          <div class="ml-auto mr-sm-5">
             <button class="btn btn-warning"> Submit </button>
             </a>
+          </div>
         </div>
-    </div>
-</form>
+  </form>
 
-</div>
+  </div>
 
 </body>
 

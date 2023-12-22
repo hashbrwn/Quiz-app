@@ -4,12 +4,15 @@ const quizzesQueries = require('../db/queries/quiz');
 const questionsQueries = require('../db/queries/question');
 
 router.get("/", (req, res) => {
+  console.log(req)
   // getting userId from the cookie
   const userId = req.session.user_id;
+  console.log(userId)
   // getting user quizzes
   quizzesQueries.getQuizzesByUser(userId).then(quizzes => {
-    res.render("quizzes", { quizzes })
+    res.render("userpage", { quizzes})
   }).catch(error => {
+    console.log(error.message)
     return res.status(400).json({ error: 'error invalid request' })
   })
 });
@@ -18,12 +21,15 @@ router.get("/", (req, res) => {
 router.get("/userQuiz", (req, res) => {
   // getting userId from the cookie
   const userId = req.session.user_id;
+console.log(userId)
   // getting user quizzes
   res.render("userQuiz")
 });
 
-router.get("/:quizId/preview", (req, res) => {
+router.get("/:quizId/", (req, res) => {
+  console.log("hello");
   const userId = req.session.user_id;
+
   // getting quizID from parameter
   const quizId = req.params.quizId;
   // getting user quizzes
@@ -34,12 +40,15 @@ router.get("/:quizId/preview", (req, res) => {
       return res.status(404).json({ error: "Quiz not found" })
     }
     // checking user owns quiz
-    if (quiz.user_id !== userId) {
+    if (quiz.user_id != userId) {
       return res.status(403).json({ error: 'Not Authorized' });
     }
     // getting question by quizId
     questionsQueries.getQuestionsByQuizId(quizId).then(questions => {
-      return res.render("quizzes", { quiz, questions });
+      console.log("quizquestions")
+      console.log(questions)
+
+      return res.render("quizpage", {quiz, questions });
     }).catch(error => {
       return res.status(500).json({ error: 'An Error Occurred' });
     })
@@ -48,5 +57,23 @@ router.get("/:quizId/preview", (req, res) => {
   })
 
 })
+
+router.get("/new",(req, res) => {
+res.render
+})
+
+
+router.get("/:id", (req, res) =>  {
+  const quizid= req.params.id
+  quizzesQueries.getQuizById(quizid)
+  .then(quiz => {
+    const templatevars = {quiz}
+res.render("quizpage", templatevars)
+
+  })
+
+})
+
+
 
 module.exports = router;

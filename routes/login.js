@@ -3,58 +3,33 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const userQueries = require('../db/queries/users');
 
-router.post('/login', (req, res) => {
-  //get email and password from request body
-  const { email, password } = req.body;
+router.get("/:id", async (req, res) => {
+  try {
+    // Saving the user id to the session
+    const userId = req.params.id;
+    req.session.user_id = userId;
 
-  userQueries.getUserByEmail(email).then(user => {
-    // check if the email is not already in use
-    if (!user.length) {
-      //send back a response with 404 code for not found email
-      return res.status(404).json({ error: 'Email not found' });
+    // Fetch user by id (assuming userQueries.findById returns a Promise)
+    const user = await userQueries.getUserById(userId);
+
+    if (!user) {
+      // Handle case where user is not found
+      return res.status(404).send("User not found");
     }
-    //checking if passwords match
-    if (!bcrypt.compareSync(password, user[0].password)) {
-      //if not return error
-      return res.status(403).json({ error: 'incorrect password' })
-    };
-    // set cookie to user_id
-    req.session.user_id = user[0].id;
-    // TODO: switch urls to different redirect
-    //redirecting to urls page
-    res.redirect('/urls');
 
-  }).catch(error => {
-    return res.status(500).json({ error: 'An Error Occurred!'});
-  });
-});
+    // Save user to session
+    req.session.user = user;
 
+    // Logging the session
+    console.log(req.session);
 
-router.get("/", (req, res) => {
-  // getting userId from the cookie
-  const userId = req.session.user_id;
-  console.log(req.session)
-  console.log("userId", userId)
-  //  getting id object
-
-
-  // userQueries.getUserById(userId).then(user => {
-  //   if (user) {
-  //     // TODO: switch urls to different redirect
-  //     res.redirect('/signUp');
-  //   }
-  //   const localsVars = {
-  //     user,
-  //   };
-
-  //   //TODO: make sure signUp matches correct page name
- 
-  // })
-   res.render("login")
-  .catch(error => {
-    console.log("Line 51:", error)
-    return res.status(500).json({ error: 'error invalid data' });
-  })
+    // Redirecting to "/userPage"
+    res.redirect("/userQuiz");
+  } catch (error) {
+    // Handle any errors that occur during the process
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 module.exports = router;
