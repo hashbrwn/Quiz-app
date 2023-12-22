@@ -4,6 +4,7 @@ const quizzesQueries = require('../db/queries/quiz');
 const questionsQueries = require('../db/queries/question');
 
 router.get("/", (req, res) => {
+  console.log(req)
   // getting userId from the cookie
   const userId = req.session.user_id;
   console.log(userId)
@@ -55,5 +56,23 @@ router.get("/:quizId/", (req, res) => {
   })
 
 })
+
+router.get("/new",(req, res) => {
+res.render
+})
+
+
+router.get("/:id", (req, res) =>  {
+  const quizid= req.params.id
+  quizzesQueries.getQuizById(quizid)
+  .then(quiz => {
+    const templatevars = {quiz}
+res.render("quizpage", templatevars)
+
+  })
+
+})
+
+
 
 module.exports = router;
