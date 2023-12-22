@@ -28,6 +28,13 @@ const getQuizById = (id) => {
     });
 }
 
+const getAllQuizzzes = () => {
+  return db.query(`SELECT * FROM quzzies`)
+  .then(data => {
+    return data.rows;
+  });
+}
+
 // helper function for quizpage
 
 function getRandomInt(max) {
@@ -56,4 +63,4 @@ const getQuiz = (number) => {
 };
 
 
-module.exports = { getQuizzesByUser, getRandomQuiz, createQuiz, getQuiz, getQuizById };
+module.exports = { getQuizzesByUser, getRandomQuiz, createQuiz, getQuiz, getQuizById, getAllQuizzzes };
