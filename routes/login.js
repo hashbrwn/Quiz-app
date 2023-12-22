@@ -30,25 +30,29 @@ router.post('/login', (req, res) => {
 });
 
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   // getting userId from the cookie
   const userId = req.session.user_id;
   console.log(req.session)
   console.log("userId", userId)
   //  getting id object
-  userQueries.getUserById(userId).then(user => {
-    if (user) {
-      // TODO: switch urls to different redirect
-      res.redirect('/urls');
-    }
-    const localsVars = {
-      user,
-    };
 
-    //TODO: make sure signUp matches correct page name
-    res.render("login", localsVars);
-  }).catch(error => {
-    console.log(error)
+
+  // userQueries.getUserById(userId).then(user => {
+  //   if (user) {
+  //     // TODO: switch urls to different redirect
+  //     res.redirect('/signUp');
+  //   }
+  //   const localsVars = {
+  //     user,
+  //   };
+
+  //   //TODO: make sure signUp matches correct page name
+ 
+  // })
+   res.render("login")
+  .catch(error => {
+    console.log("Line 51:", error)
     return res.status(500).json({ error: 'error invalid data' });
   })
 });
