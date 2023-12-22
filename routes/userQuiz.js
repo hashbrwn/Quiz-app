@@ -13,12 +13,13 @@ router.get("/", (req, res) => {
     return res.status(400).json({ error: 'error invalid request' })
   })
 });
+
 // TODO: update when create-quiz page is made
-router.get("/create", (req, res) => {
+router.get("/userQuiz", (req, res) => {
   // getting userId from the cookie
   const userId = req.session.user_id;
   // getting user quizzes
-  res.render("create-quiz")
+  res.render("userQuiz")
 });
 
 router.get("/:quizId/preview", (req, res) => {
