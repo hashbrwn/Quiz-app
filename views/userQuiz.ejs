@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quiz Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+  crossorigin="anonymous"/>
+  
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+ 
+    <h1>Create your quiz!</h1>
+
+<form method="POST" action="/userQuiz-api">
+    <div class="container mt-sm-5 my-7">
+      <div class="form-outline">
+        <input name="quizname" placeholder="Please name your quiz" class="form-control" id="textAreaExample1" rows="2"></input>
+        <label class="py-2 h3" for="textAreaExample">Quiz name</label>
+      </div>
+    </div>
+
+
+  <div class="container mt-sm-5 my-7">
+        <div class="question ml-sm-15 pl-sm-5 pt-2">
+
+          <div class="form-outline">
+            <label class="py-2 h4" for="textAreaExample">Question 1</label>
+            <input name="question1" placeholder="Please enter first question" class="form-control" id="textAreaExample1" rows="2"></input>
+          <br>
+
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+
+                <div class="form-outline">
+                  <label class="py-2 h4" for="textAreaExample">Answer option 1</label>
+                  <input name="question1_answer1" placeholder="Please enter first answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+                </div>
+                <br>
+
+                <div class="form-outline">
+                  <label class="py-2 h4" for="textAreaExample">Answer option 2</label>
+                  <input name="question1_answer2" placeholder="Please enter second answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+                </div>
+                <br>
+
+                <div class="form-outline">
+                  <label class="py-2 h4" for="textAreaExample">Answer option 3</label>
+                  <input name="question1_answer3"placeholder="Please enter third answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+                </div>
+                <br>
+
+
+                <div class="form-outline">
+                  <label class="py-2 h4" for="textAreaExample">Correct answer</label>
+                  <input name="question1_correct_answer" placeholder="e.g. answer1" class="form-control" id="textAreaExample1" rows="1"></input>
+                </div>
+                <br>
+
+   
+                <br>
+            </div>
+        </div>
+ </div>
+
+ <div class="container mt-sm-5 my-3">
+  <div class="question ml-sm-10 pl-sm-5 pt-2">
+
+    <div class="form-outline">
+      <label class="py-2 h4" for="textAreaExample">Question 2</label>
+      <input name="question2" placeholder="Please enter first question" class="form-control" id="textAreaExample1" rows="2"></input>
+    <br>
+
+      <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+
+          <div class="form-outline">
+            <label class="py-2 h4" for="textAreaExample">Answer option 1</label>
+            <input name="question2_answer1" placeholder="Please enter first answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+          </div>
+          <br>
+
+          <div class="form-outline">
+            <label class="py-2 h4" for="textAreaExample">Answer option 2</label>
+            <input name="question2_answer2" placeholder="Please enter second answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+          </div>
+          <br>
+
+          <div class="form-outline">
+            <label class="py-2 h4" for="textAreaExample">Answer option 3</label>
+            <input name="question2_answer3"placeholder="Please enter third answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+          </div>
+          <br>
+
+
+          <div class="form-outline">
+            <label class="py-2 h4" for="textAreaExample">Correct answer</label>
+            <input name="question2_correct_answer" placeholder="e.g. answer1" class="form-control" id="textAreaExample1" rows="1"></input>
+          </div>
+          <br>
+          <br>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-sm-5 my-3">
+    <div class="question ml-sm-10 pl-sm-5 pt-2">
+  
+      <div class="form-outline">
+        <label class="py-2 h4" for="textAreaExample">Question 3</label>
+        <input name="question3" placeholder="Please enter first question" class="form-control" id="textAreaExample1" rows="2"></input>
+      <br>
+  
+        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+  
+            <div class="form-outline">
+              <label class="py-2 h4" for="textAreaExample">Answer option 1</label>
+              <input name="question3_answer1" placeholder="Please enter first answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+            </div>
+            <br>
+  
+            <div class="form-outline">
+              <label class="py-2 h4" for="textAreaExample">Answer option 2</label>
+              <input name="question3_answer2" placeholder="Please enter second answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+            </div>
+            <br>
+  
+            <div class="form-outline">
+              <label class="py-2 h4" for="textAreaExample">Answer option 3</label>
+              <input name="question3_answer3"placeholder="Please enter third answer option" class="form-control" id="textAreaExample1" rows="1"></input>
+            </div>
+            <br>
+  
+  
+            <div class="form-outline">
+              <label class="py-2 h4" for="textAreaExample">Correct answer</label>
+              <input name="question3_correct_answer" placeholder="e.g. answer1" class="form-control" id="textAreaExample1" rows="1"></input>
+            </div>
+            <br>
+            <br>
+        </div>
+      </div>
+    </div>
+
+<br>
+
+<div class="form-outline">
+  <label class="py-2 h4" for="textAreaExample">Do you want to make it public?</label>
+  <p>
+  <label class="options">
+    <input type="radio" name="private" value="true">
+    <span class="checkmark"></span> Yes
+  </label>
+  </p>
+
+</div>
+
+  <div class="d-flex align-items-center pt-3">
+      <div class="ml-auto mr-sm-5">
+          <button class="btn btn-warning" type="submit"> Create </button>
+          </a>
+      </div>
+    </div>
+
+
+</form>
+
+
+</div>
+
+</body>
+
+</html>
